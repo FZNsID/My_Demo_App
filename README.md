@@ -52,8 +52,15 @@ public final class BootReceiver extends OnBootReceiver {
     }
 }
   ```
+ 
+Step 4. Please Declare this line into your first Activity in your Project
+
+ ```
+ ContextCompat.startForegroundService(MainActivity.this, new Intent(MainActivity.this, Myservice.class));
+  ```
   
-Step 4. Now Add Permissions and Declare Receiver and Service in Manifest FIle.
+ 
+Step 5. Now Add Permissions and Declare Receiver and Service in Manifest FIle.
 
 Permissons
   
