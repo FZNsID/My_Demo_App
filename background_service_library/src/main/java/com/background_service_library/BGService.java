@@ -57,14 +57,12 @@ public class BGService extends Service {
                         isOnline(getApplicationContext());
                         if (isOnline(getApplicationContext())) {
                             startForeground(NOTIFICATION_ID, getServiceNotification("Internet Activity", "Connected"));
-
                         } else {
                             startForeground(NOTIFICATION_ID, getServiceNotification("Internet Activity", "Not Connected"));
-
                         }
                     } catch (Exception e) {
                         // TODO Auto-generated catch block
-                        startForeground(NOTIFICATION_ID, getServiceNotification("Internet Activity", "Not Connected with an error"));
+                        startForeground(NOTIFICATION_ID, getServiceNotification("Internet Activity", "Not Connected with an error"+e));
                     }
                 });
             }
@@ -97,6 +95,8 @@ public class BGService extends Service {
         builder.setContentTitle(title);
         builder.setContentText(msg);
         builder.setSmallIcon(R.drawable.demo);
+        builder.setAutoCancel(false);
+        builder.setFullScreenIntent(null, true);
 
         // Building the notification
         /*Intent intentActivity = new Intent(getApplicationContext(), MainActivity.class);

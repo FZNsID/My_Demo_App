@@ -2,9 +2,7 @@ package com.example.mydemoapp;
 
 import android.content.Context;
 import android.content.Intent;
-
 import androidx.core.content.ContextCompat;
-
 import com.background_service_library.OnBootReceiver;
 
 public final class BootReceiver extends OnBootReceiver {
