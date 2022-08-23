@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
@@ -64,6 +65,7 @@ public class BGService extends Service {
                         // TODO Auto-generated catch block
                         startForeground(NOTIFICATION_ID, getServiceNotification("Internet Activity", "Not Connected with an error"+e));
                     }
+                    Log.d("Service", "Running");
                 });
             }
         };
